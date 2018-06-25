@@ -109,7 +109,7 @@ public class SiteManagerDialog extends BasicDialog implements Runnable {
         });
 
         // TODO:  Add certificate manual import capabilities
-        deleteButton = addPanelButton("Delete", IconCache.Icon.DELETE_ICON, KeyEvent.VK_D);
+        deleteButton = addPanelButton(LocalResource.localBundle().getString("site.delete"), IconCache.Icon.DELETE_ICON, KeyEvent.VK_D);
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

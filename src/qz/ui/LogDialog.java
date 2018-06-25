@@ -12,6 +12,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ResourceBundle;
 
 /**
  * Created by Tres on 2/26/2015.
@@ -35,10 +36,12 @@ public class LogDialog extends BasicDialog {
     }
 
     public void initComponents() {
+        ResourceBundle bundle = LocalResource.localBundle();
+
         setIconImage(getImage(IconCache.Icon.LOG_ICON));
 
         LinkLabel logDirLabel = new LinkLabel(SystemUtilities.getDataDirectory() + File.separator);
-        logDirLabel.setText("Open Log Location");
+        logDirLabel.setText(bundle.getString("log.open.log.location"));
         setHeader(logDirLabel);
 
         logArea = new JTextArea(ROWS, COLS);
@@ -47,7 +50,7 @@ public class LogDialog extends BasicDialog {
         logArea.setWrapStyleWord(true);
 
         // TODO:  Fix button panel resizing issues
-        clearButton = addPanelButton("Clear", IconCache.Icon.DELETE_ICON, KeyEvent.VK_L);
+        clearButton = addPanelButton(bundle.getString("log.clear"), IconCache.Icon.DELETE_ICON, KeyEvent.VK_L);
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

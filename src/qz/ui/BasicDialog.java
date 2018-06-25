@@ -49,7 +49,7 @@ public class BasicDialog extends JDialog {
         buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         buttonPanel.add(new JSeparator(JSeparator.HORIZONTAL));
         buttonPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        closeButton = addPanelButton("Close", IconCache.Icon.ALLOW_ICON, KeyEvent.VK_C);
+        closeButton = addPanelButton(LocalResource.localBundle().getString("basic.close"), IconCache.Icon.ALLOW_ICON, KeyEvent.VK_C);
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
